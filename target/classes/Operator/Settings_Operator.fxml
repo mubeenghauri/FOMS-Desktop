@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnallorders" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <Label layoutX="42.0" layoutY="22.0" prefHeight="60.0" prefWidth="183.0" text="Settings :" textAlignment="CENTER" textFill="#e7e5e5">
+           <font>
+               <Font size="24.0" />
+           </font>
+       </Label>
+      <Label layoutX="80.0" layoutY="211.0" prefHeight="17.0" prefWidth="85.0" text="Theme :" textFill="#e7e5e5">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="248.0" layoutY="212.0" prefWidth="150.0" promptText="Black (Default)" stylesheets="@../images/style.css" />
+      <Label layoutX="80.0" layoutY="154.0" text="Change Password :" textFill="#e7e5e5">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="248.0" layoutY="155.0" prefHeight="25.0" prefWidth="249.0" promptText="Enter new Pswd" />
+      <Button layoutX="416.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Change Pswd" />
+      <Label layoutX="80.0" layoutY="100.0" text="Change User Name :" textFill="#e7e5e5">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="249.0" layoutY="101.0" prefHeight="25.0" prefWidth="249.0" promptText="Change Name" />
+      <Button layoutX="416.0" layoutY="101.0" mnemonicParsing="false" text="Change Name" />
+      <Button layoutX="422.0" layoutY="212.0" mnemonicParsing="false" text="Save Theme" textFill="#e7e5e5" />
+   </children>
+</Pane>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.Operator_Controller">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="204.0" style="-fx-background-color: #05071F;" stylesheets="@../images/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/avatar-icon-png-8.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="50.0" />
+               </VBox.margin></ImageView>
+            <Label text="XYZ" textFill="#e7e5e5">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btndashboard" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#Switch_to_dashboard" prefHeight="42.0" prefWidth="259.0" stylesheets="@../images/style.css" text="Dashboard" textFill="#e7e5e5">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#switchToOrders" prefHeight="42.0" prefWidth="259.0" stylesheets="@../images/style.css" text="Orders">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Open_Envelope_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnaddoperator" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#SwitchToMyinfo" prefHeight="42.0" prefWidth="259.0" stylesheets="@../images/style.css" text="My Info">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#SwitchToSettings" prefHeight="42.0" prefWidth="259.0" stylesheets="@../images/style.css" text="Settings">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Slider__32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#SwitchtoLogin" prefHeight="42.0" prefWidth="259.0" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSignout1" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="341.0" mnemonicParsing="false" onAction="#SwitchtoLogin" prefHeight="42.0" prefWidth="259.0" text="Exit">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane fx:id="mainPane" layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #02030A;">
+         <children>
+            <Pane fx:id="pnldashboard" prefHeight="576.0" prefWidth="851.0">
+               <children>
+                  <Label layoutX="39.0" layoutY="25.0" prefHeight="35.0" prefWidth="256.0" text="Employee | DashBoard" textFill="#e7e5e5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="590.0" layoutY="47.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="749.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="72.0" prefHeight="92.0" prefWidth="661.0" spacing="50.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="22000" textFill="#2a73ff">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total Orders" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="1500" textFill="#26bfbc">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Order Accept" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="1000" textFill="#fa5f7e">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Cancel Orders" textFill="#e7e5e5" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label layoutX="356.0" layoutY="164.0" text="Overview" textFill="#e7e5e5">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="1.0" layoutY="192.0" prefHeight="383.0" prefWidth="787.0" stylesheets="@../images/style.css">
+                     <content>
+                        <Pane prefHeight="488.0" prefWidth="899.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css">
+                           <children>
+                              <Label layoutX="40.0" layoutY="4.0" text="Customer's FeedBack" textAlignment="JUSTIFY" textFill="#e7e5e5">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <StackedAreaChart layoutX="-12.0" layoutY="26.0" prefHeight="257.0" prefWidth="472.0">
+                                <xAxis>
+                                  <NumberAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </StackedAreaChart>
+                              <Label layoutX="573.0" layoutY="26.0" text="Sales Overview" textFill="#e7e5e5">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <PieChart fx:id="piechart" layoutX="511.0" layoutY="84.0" prefHeight="200.0" prefWidth="236.0" />
+                           </children>
+                        </Pane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

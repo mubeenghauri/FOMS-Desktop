@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnrejectorders" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.viewallrejectorders_admin_Controller">
+   <children>
+       <Label layoutX="42.0" layoutY="22.0" prefHeight="60.0" prefWidth="183.0" text="Rejected Orders :" textAlignment="CENTER" textFill="#e7e5e5">
+           <font>
+               <Font size="24.0" />
+           </font>
+       </Label>
+      <ScrollPane layoutX="20.0" layoutY="97.0" prefHeight="399.0" prefWidth="762.0" stylesheets="@../images/style.css">
+         <content>
+            <TableView prefHeight="398.0" prefWidth="760.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css">
+              <columns>
+                <TableColumn prefWidth="45.600006103515625" text="ID" />
+                <TableColumn prefWidth="126.39995574951172" text="Name" />
+                  <TableColumn prefWidth="119.2000732421875" text="Mobile Number" />
+                  <TableColumn minWidth="0.0" prefWidth="131.20001220703125" text="Address" />
+                  <TableColumn minWidth="0.0" text="Order" />
+                  <TableColumn prefWidth="105.60003662109375" text="Status" />
+                  <TableColumn prefWidth="131.99993896484375" text="Operator Name" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>

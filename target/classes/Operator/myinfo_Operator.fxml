@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnallorders" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <Label layoutX="42.0" layoutY="22.0" prefHeight="60.0" prefWidth="183.0" text="Your Info :" textAlignment="CENTER" textFill="#e7e5e5">
+           <font>
+               <Font size="24.0" />
+           </font>
+       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/avatar-icon-png-8.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="BOTTOM_LEFT" layoutX="55.0" layoutY="116.0" prefHeight="17.0" prefWidth="54.0" text="Name :" textFill="#e7e5e5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="BOTTOM_LEFT" layoutX="55.0" layoutY="160.0" text="CNIC :" textFill="#e7e5e5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="BOTTOM_LEFT" layoutX="53.0" layoutY="205.0" text="Mobile Number :" textFill="#e7e5e5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="BOTTOM_LEFT" layoutX="53.0" layoutY="245.0" prefHeight="21.0" prefWidth="80.0" text="Address :" textFill="#e7e5e5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="BOTTOM_LEFT" layoutX="51.0" layoutY="400.0" prefHeight="21.0" prefWidth="150.0" text="Login ID :" textFill="#e7e5e5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="BOTTOM_LEFT" layoutX="51.0" layoutY="446.0" prefHeight="21.0" prefWidth="91.0" text="Password :" textFill="#e7e5e5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="186.0" layoutY="245.0" prefHeight="117.0" prefWidth="242.0">
+         <content>
+            <TextArea disable="true" prefHeight="131.0" prefWidth="226.0" />
+         </content>
+      </ScrollPane>
+      <TextField disable="true" layoutX="186.0" layoutY="114.0" prefHeight="25.0" prefWidth="224.0" />
+      <TextField disable="true" layoutX="186.0" layoutY="158.0" prefHeight="25.0" prefWidth="224.0" />
+      <TextField disable="true" layoutX="186.0" layoutY="203.0" prefHeight="25.0" prefWidth="224.0" />
+      <TextField disable="true" layoutX="186.0" layoutY="398.0" prefHeight="25.0" prefWidth="183.0" />
+      <PasswordField disable="true" layoutX="186.0" layoutY="444.0" prefHeight="25.0" prefWidth="183.0" />
+   </children>
+</Pane>

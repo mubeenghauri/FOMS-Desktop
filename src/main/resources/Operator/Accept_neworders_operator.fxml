@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pnrejectorders" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.OperatorOrderController">
+   <children>
+      <Label layoutX="42.0" layoutY="22.0" prefHeight="60.0" prefWidth="235.0" text="Accept New Orders : " textAlignment="CENTER" textFill="#e7e5e5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="20.0" layoutY="97.0" prefHeight="399.0" prefWidth="762.0" stylesheets="@../images/style.css">
+         <content>
+            <TableView fx:id="mainGrid" prefHeight="398.0" prefWidth="760.0" style="-fx-background-color: #02030A;" stylesheets="@../images/style.css">
+               <columns>
+                  <TableColumn fx:id="orderID" prefWidth="88.0" text="ID" />
+                  <TableColumn fx:id="custName" prefWidth="85.0" text="Customer" />
+                  <TableColumn fx:id="address" prefWidth="181.0" text="Address" />
+                  <TableColumn fx:id="items" minWidth="0.0" prefWidth="155.0" text="Items" />
+                  <TableColumn fx:id="status" minWidth="0.0" prefWidth="87.0" text="Status" />
+<!--                  <TableColumn prefWidth="146.0" text="Reject" />-->
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Button layoutX="545.0" layoutY="52.0" mnemonicParsing="false" onAction="#testTable" text="Test" />
+   </children>
+</Pane>
