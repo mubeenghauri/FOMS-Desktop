@@ -1,5 +1,7 @@
 package home.models;
 
+import home.models.lib.ApproveButton;
+
 public class Order {
 
     private String orderNumber;
@@ -7,9 +9,15 @@ public class Order {
     private String addressToDeliver;
     private String items;
     private String status = "N/A";
+    private ApproveButton approveButton;
+
+    public void setApproveButton() {
+        this.approveButton = new ApproveButton(this.orderNumber);
+    }
 
     public void setOrderNumber(String on) {
         this.orderNumber = on;
+        this.setApproveButton();
     }
 
     public void setCustomerName(String cn) {
@@ -44,5 +52,9 @@ public class Order {
 
     public String getItems() {
         return this.items;
+    }
+
+    public ApproveButton getApproveButton() {
+        return this.approveButton;
     }
 }
