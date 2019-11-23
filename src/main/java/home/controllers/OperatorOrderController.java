@@ -26,6 +26,7 @@ public class OperatorOrderController implements Initializable {
     @FXML TableColumn address;
     @FXML TableColumn items;
     @FXML TableColumn status;
+    @FXML TableColumn acceptCol;
 
 
     @Override
@@ -42,6 +43,7 @@ public class OperatorOrderController implements Initializable {
         address.setCellValueFactory(new PropertyValueFactory<>("addressToDeliver"));
         items.setCellValueFactory(new PropertyValueFactory<>("items"));
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        acceptCol.setCellValueFactory(new PropertyValueFactory<>("approveButton"));
 
     }
 
