@@ -1,4 +1,4 @@
-package home;
+package home.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Controller {
+public class AdminHomeController {
 
     //Button Declaration
     @FXML
