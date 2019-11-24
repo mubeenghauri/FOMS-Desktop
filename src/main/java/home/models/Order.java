@@ -1,7 +1,8 @@
 package home.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import home.models.lib.ApproveButton;
-
+@JsonIgnoreProperties(value = {"approveButton"})
 public class Order {
 
     private String orderNumber;
@@ -11,13 +12,14 @@ public class Order {
     private String status = "N/A";
     private ApproveButton approveButton;
 
-    public void setApproveButton() {
-        this.approveButton = new ApproveButton(this.orderNumber);
-    }
-
+//    public void setApprove() {
+//        this.approveButton = new ApproveButton(this.orderNumber);
+//    }
+//
     public void setOrderNumber(String on) {
         this.orderNumber = on;
-        this.setApproveButton();
+        ///this.setApprove();
+        this.approveButton = new ApproveButton(on);
     }
 
     public void setCustomerName(String cn) {
