@@ -1,6 +1,8 @@
 package home.models;
 
 import java.sql.*;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
 public class DatabaseHandler {
 
@@ -26,6 +28,35 @@ public class DatabaseHandler {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/foodo","mubeen","");
         Statement st = con.createStatement();
-        st.executeUpdate(qry);
+        if(st.executeUpdate(qry) > 0) {
+            System.out.println("[DatabaseHandler::addOrderToDb] [SUCCESS] Inserted Order Successfully!");
+            return;
+        }
+        System.out.println("[DatabaseHandler::addOrderToDb] [ERROR] Failed inserting order !!");
+        return;
+    }
+
+    public void runQuery(String qry) throws ClassNotFoundException, SQLException {
+        System.out.println("[DatabaseHandler::getResult] [NOTE] Recieved query : "+qry);
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/foodo","mubeen","");
+        Statement st = con.createStatement();
+        if(st.executeUpdate(qry) > 0) {
+            System.out.println("[DatabaseHandler::runQuery] [SUCCESS] Query Run Successfully!");
+            return;
+        }
+        System.out.println("[DatabaseHandler::runQuery] [ERROR] Failed runnin query !!");
+        return;
+    }
+
+    public void addOrderToAccepted(String orderid, String operatorid) throws SQLException, ClassNotFoundException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        String qry = "insert into approvedOrders(ORDERID, OPERATORID, ACCEPTDATE) VALUES ( '"+orderid+"', '"+
+                operatorid+"', '"+
+                dtf.format(now) +"')";
+        System.out.println("[DatabaseHandler::addOrderToDb] [NOTE] Running query : "+qry);
+        this.runQuery(qry);
+
     }
 }
