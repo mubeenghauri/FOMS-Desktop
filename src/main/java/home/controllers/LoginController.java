@@ -1,6 +1,8 @@
 package home.controllers;
 
 import home.models.Admin;
+import home.models.Operator;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,9 +31,11 @@ public class LoginController implements Initializable {
 
     private Admin admin;
 
+    private Operator operator;
 
 
-     @FXML void Log_in() throws SQLException, ClassNotFoundException {
+
+     @FXML void Log_in(ActionEvent event) throws SQLException, ClassNotFoundException {
 
         String name = entry_id.getText();
         String pass = entry_pswd.getText();
@@ -48,7 +52,7 @@ public class LoginController implements Initializable {
                 stage.setScene(new Scene(root));
                 stage.initStyle(StageStyle.UNDECORATED);
                 stage.show();
-                //((Node)(event.getSource())).getScene().getWindow().hide();
+                ((Node)(event.getSource())).getScene().getWindow().hide();
             }
             catch(Exception e){
                 //System.out.println(e);
@@ -56,6 +60,25 @@ public class LoginController implements Initializable {
         }
         else {
             // Case when operator is logging in
+
+            operator = new Operator();
+
+            if(operator.login(name, pass)) {
+                try{
+                    AnchorPane root = FXMLLoader.load(getClass().getResource("/Operator/Home.fxml"));
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.initStyle(StageStyle.UNDECORATED);
+                    stage.show();
+                    ((Node)(event.getSource())).getScene().getWindow().hide();
+                }
+                catch(Exception e) {
+                    //System.out.println(e);
+                    System.out.println("OPERATOR DASHBOARD | cannot be loaded ");
+                }
+            } else {
+                System.out.println("[LoginController::log_in] [ERROR] Operator login failed");
+            }
         }
 
 
