@@ -1,13 +1,11 @@
 package home;
 
-import home.models.Request;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.net.MalformedURLException;
 
 public class Main extends Application {
@@ -26,8 +24,6 @@ public class Main extends Application {
             System.out.println("System cannot Run");
             return;
         }
-
-
     }
 
 
