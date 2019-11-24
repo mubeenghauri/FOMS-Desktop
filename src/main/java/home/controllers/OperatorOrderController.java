@@ -1,13 +1,12 @@
 package home.controllers;
 
 import home.models.Request;
+import home.models.DatabaseHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableView;
-
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import home.models.Order;
@@ -28,6 +27,7 @@ public class OperatorOrderController implements Initializable {
     @FXML TableColumn status;
     @FXML TableColumn acceptCol;
     @FXML TableColumn rejectCol;
+    private final DatabaseHandler dbHandler = new DatabaseHandler();
 
 
     @Override
@@ -65,6 +65,7 @@ public class OperatorOrderController implements Initializable {
         System.out.println("[OOC::addOrder] [NOTE] : Recieved Order with id : "+order.getOrderNumber());
         try {
             mainGrid.getItems().add(order);
+            this.dbHandler.addOrderToDb(order);
         } catch (Exception e) {
             System.out.println("[OOC::addOrder] [ERROR] : Failed Adding Order => "+e.getMessage());
             testTable();
