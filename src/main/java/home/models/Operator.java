@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Operator implements  User{
 
     private String name;
-    private String id;
+    private static String id;
     private DatabaseHandler dbHandler;
 
 
@@ -49,4 +49,7 @@ public class Operator implements  User{
         this.id = id;
     }
 
+    public static String getId() {
+        return id;
+    }
 }
