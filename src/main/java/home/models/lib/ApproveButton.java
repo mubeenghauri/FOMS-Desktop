@@ -1,5 +1,6 @@
 package home.models.lib;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javafx.scene.control.Button;
 
 /**
@@ -9,7 +10,7 @@ import javafx.scene.control.Button;
  *
  * @author mubeenghauri
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApproveButton extends Button {
     private String ButtonId;
 
