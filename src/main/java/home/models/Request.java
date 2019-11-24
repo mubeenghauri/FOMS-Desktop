@@ -1,5 +1,6 @@
 package home.models;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import home.controllers.OperatorOrderController;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
@@ -34,11 +35,6 @@ public class Request extends Thread {
     ;
     private static HttpsURLConnection request;
     private static OperatorOrderController ooc;
-//    public static OperatorOrderController oc;
-
-//    public Request() throws MalformedURLException {
-//        this.getUrl  = new URL("https://ooad-api.herokuapp.com/getOrder");
-//    }
 
     public Request(OperatorOrderController oc) {
         this.ooc = oc;
@@ -77,9 +73,9 @@ public class Request extends Thread {
                    // System.out.println("Fine till here");
                 }
             } catch (Exception e) {
-                System.out.println("[ERROR] something went wrong in thread; exiting ;");
+                System.out.println("[ERROR] something went wrong in thread ;");
                 System.out.println(e);
-                break;
+                //break;
             }
         }
     }
@@ -90,7 +86,12 @@ public class Request extends Thread {
             return;
         }
         System.out.println(req);
-        Order o = new ObjectMapper().readValue(req, Order.class);
+        ObjectMapper om = new ObjectMapper();
+        om.configure(DeserializationFeature.FAIL_ON_MISSING_EXTERNAL_TYPE_ID_PROPERTY, false);
+        om.configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES, false);
+        om.configure(DeserializationFeature.FAIL_ON_NUMBERS_FOR_ENUMS, false);
+        om.configure(DeserializationFeature.FAIL_ON_UNRESOLVED_OBJECT_IDS, false);
+        Order o = om.readValue(req, Order.class);
         System.out.println("[SUCCESS] Order object created with id :  "+o.getOrderNumber());
         System.out.println("[NOTE] Sending order to OOC ...");
         if(this.ooc.addOrderToTable(o)) {
@@ -99,8 +100,6 @@ public class Request extends Thread {
         }
         System.out.println("[ERROR] Failed adding order ...");
         return;
-//        System.out.println("Testing");
-//        ooc.testTable();
-//        System.out.println("Tested");
+
     }
 }
