@@ -74,7 +74,4 @@ public class OperatorOrderController implements Initializable {
         System.out.println("[OOC::addOrder] [SUCCESS] : Added Order to Table  ");
         return true;
     }
-
-
-
 }
