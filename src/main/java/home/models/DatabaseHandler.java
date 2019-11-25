@@ -69,4 +69,9 @@ public class DatabaseHandler {
         System.out.println("[DatabaseHandler::addOrderToDb] [NOTE] Running query : "+qry);
         this.runQuery(qry);
     }
+
+    public ResultSet getAllOrders() throws SQLException, ClassNotFoundException {
+        System.out.println("[DatabaseHandler::getAllOrders] [NOTE] Running query : select * from Orders");
+        return this.getResult("select * from allOrders");
+    }
 }
