@@ -59,4 +59,14 @@ public class DatabaseHandler {
         this.runQuery(qry);
 
     }
+
+    public void addOrderToRejected(String orderid, String operatorid) throws SQLException, ClassNotFoundException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        String qry = "insert into rejectedOrders(ORDERID, OPERATORID, ACCEPTDATE) VALUES ( '"+orderid+"', '"+
+                operatorid+"', '"+
+                dtf.format(now) +"')";
+        System.out.println("[DatabaseHandler::addOrderToDb] [NOTE] Running query : "+qry);
+        this.runQuery(qry);
+    }
 }
